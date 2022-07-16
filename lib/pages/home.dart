@@ -1,3 +1,5 @@
+import 'package:demo/modal/catalog.dart';
+import 'package:demo/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/drawer.dart';
@@ -12,11 +14,16 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('Hello'),
+        appBar: AppBar(title: const Text('Hello')),
+        drawer: const MyDrawer(),
+        body: ListView.builder(
+          itemCount: CatalogModel.items.length,
+          itemBuilder: (context, index) {
+            return MyWidget(
+              myitems: CatalogModel.items[index],
+            );
+          },
         ),
-        body: Center(child: Text("Welcome To $day days of flutter $name")),
-        drawer: MyDrawer(),
       ),
     );
   }
