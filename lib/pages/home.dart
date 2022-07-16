@@ -12,16 +12,18 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dummy = List.generate(10, (index) => CatalogModel.items[0]);
     return Material(
       child: Scaffold(
         appBar: AppBar(title: const Text('Hello')),
         drawer: const MyDrawer(),
         body: ListView.builder(
-          itemCount: CatalogModel.items.length,
+          //itemCount: CatalogModel.items.length,
+          itemCount: dummy.length,
           itemBuilder: (context, index) {
             return MyWidget(
-              myitems: CatalogModel.items[index],
-            );
+                //myitems: CatalogModel.items[index],
+                myitems: dummy[index]);
           },
         ),
       ),
