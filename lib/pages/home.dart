@@ -4,8 +4,8 @@ import 'package:demo/modal/catalog.dart';
 import 'package:demo/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import '../widgets/drawer.dart';
+import 'package:http/http.dart' as http;
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,6 +16,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final int day = 30;
   final String name = 'Kuldip';
+  final url = "https://api.jsonbin.io/b/604dbddb683e7e079c4eefd3";
 
   @override
   void initState() {
@@ -28,14 +29,15 @@ class _HomeState extends State<Home> {
     final catalogueJson =
         await rootBundle.loadString("assets/files/catalogue.json");
     // print(catalogueJson);
-
+    // final response = await http.get(Uri.parse(url));
+    // final catalogueJson = response.body;
     //decoding json string into another format(map)
     final decodedData = jsonDecode(catalogueJson);
     // print(decodedData);
     // if we have a map and we want to convert it to string -> jsonEncode()
 
     var productsData = decodedData["products"];
-    print(productsData);
+    //print(productsData);
 
     CatalogueModel.items = List.from(productsData)
         .map<MyItems>((item) => MyItems.fromMap(item))
