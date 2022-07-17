@@ -20,6 +20,7 @@ class _LoginState extends State<Login> {
         changeButton = true;
       });
       await Future.delayed(Duration(seconds: 1));
+      // ignore: use_build_context_synchronously
       await Navigator.pushNamed(context, MyRoutes.homeRoute);
       setState(() {
         changeButton = false;
@@ -30,6 +31,7 @@ class _LoginState extends State<Login> {
   //Go to undraw.co and download image
   @override
   Widget build(BuildContext context) {
+    var done = Icons.done;
     return Material(
       color: Colors.white,
       child: SingleChildScrollView(
@@ -44,7 +46,8 @@ class _LoginState extends State<Login> {
               const SizedBox(height: 20.0),
               Text(
                 "Welcome $name",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20.0),
               Padding(
@@ -98,10 +101,10 @@ class _LoginState extends State<Login> {
                           alignment: Alignment.center,
                           child: changeButton
                               ? Icon(
-                                  Icons.done,
+                                  done,
                                   color: Colors.white,
                                 )
-                              : Text(
+                              : const Text(
                                   "Login",
                                   style: TextStyle(
                                       color: Colors.white,

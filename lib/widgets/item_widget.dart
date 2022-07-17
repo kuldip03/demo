@@ -1,12 +1,12 @@
 import 'package:demo/modal/catalog.dart';
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatelessWidget {
+class ItemWidget extends StatelessWidget {
   final MyItems myitems;
 
-  const MyWidget({Key? key, required this.myitems})
-      : assert(myitems != null),
-        super(key: key);
+  const ItemWidget({Key? key, required this.myitems})
+      //: assert(myitems != null),
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
