@@ -2,6 +2,7 @@ import 'package:demo/utils/routes.dart';
 import 'package:demo/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/pages/home.dart';
+import 'package:demo/pages/test.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'pages/login.dart';
@@ -19,10 +20,11 @@ class MyApp extends StatelessWidget {
       theme: MyThemes.lightTheme(context),
       darkTheme: MyThemes.darkTheme(context),
       //home: Home(),
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.apiRoute,
       routes: {
         MyRoutes.loginRoute: (context) => Login(),
         MyRoutes.homeRoute: (context) => Home(),
+        MyRoutes.apiRoute: (context) => ApiClass(),
       },
     );
   }
