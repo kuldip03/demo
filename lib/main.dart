@@ -1,4 +1,4 @@
-import 'package:demo/dio/dio.dart';
+import 'package:demo/dio/rest_api_dio.dart';
 import 'package:demo/pages/post.dart';
 import 'package:demo/pages/web.dart';
 import 'package:demo/utils/routes.dart';
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.apiRoute: (context) => ApiClass(),
         MyRoutes.webView: (context) => WebApp(),
         MyRoutes.postApi: (context) => PostApp(),
-        MyRoutes.dioApi: (context) => DioApp(),
+        MyRoutes.dioApi: (context) => DemoApp(),
       },
     );
   }
