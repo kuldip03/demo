@@ -16,7 +16,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final int day = 30;
   final String name = 'Kuldip';
-  final url = "https://api.jsonbin.io/b/604dbddb683e7e079c4eefd3";
+  final url = "https://softbuy.co.in/admin/connect/restapi/catalogue.json";
 
   @override
   void initState() {
@@ -26,11 +26,11 @@ class _HomeState extends State<Home> {
 
   loadData() async {
     await Future.delayed(const Duration(seconds: 2));
-    final catalogueJson =
-        await rootBundle.loadString("assets/files/catalogue.json");
+    // final catalogueJson =
+    //     await rootBundle.loadString("assets/files/catalogue.json");
     // print(catalogueJson);
-    // final response = await http.get(Uri.parse(url));
-    // final catalogueJson = response.body;
+    final response = await http.get(Uri.parse(url));
+    final catalogueJson = response.body;
     //decoding json string into another format(map)
     final decodedData = jsonDecode(catalogueJson);
     // print(decodedData);
